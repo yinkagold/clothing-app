@@ -45,11 +45,11 @@
       </form>    
   </div>
   <div class="col-md-6">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" [src]="imageUrl.value">
+    <div *ngIf="product.title" class="card" style="width: 20rem;">
+      <img class="card-img-top" [src]="product.imageUrl" *ngIf="product.imageUrl">
       <div class="card-body">
-        <h4 class="card-title">{{ title.value }}</h4>
-        <p class="card-text">{{ price.value | currency:'NGN':symbol}} </p>
+        <h4 class="card-title">{{ product.title }}</h4>
+        <p class="card-text">{{ product.price | currency:'NGN':true }} </p>
       </div>
     </div>
   </div>
