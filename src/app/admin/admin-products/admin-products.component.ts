@@ -1,7 +1,7 @@
 import { ProductService } from './../../product.service';
 
 import { Observable } from 'rxjs/Rx';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Subscription } from 'rxjs/Subscription';
 import { Product } from '../../models/product';
@@ -14,6 +14,7 @@ import { DataTableResource } from 'angular-4-data-table';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
+  @Input() sortable = false;
   products: Product[];
   subscription: Subscription;
   tableResource: DataTableResource<Product>;
@@ -43,8 +44,8 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   }
 
   filter(query: string) {
-   let filteredProducts =  (query) ?
-      this.products.filter(p => p.title.toLowerCase().includes(query.toLowerCase())) :
+   const filteredProducts =  (query) ?
+   this.products.filter(p => p.title) :
       this.products;
 
       this.initializeTable(filteredProducts);

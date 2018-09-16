@@ -29,6 +29,10 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartService } from './shopping-cart.service';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,10 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     ShoppingCartComponent,
     ProductFormComponent,
     AdminProductsComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
+    ProductQuantityComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,7 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-      { path: '', component: HomeComponent},
+      { path: '', component: ProductsComponent},
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
@@ -92,7 +99,8 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     AdminAuthGuard,
     UserService,
     CategoryService,
-    ProductService
+    ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })
