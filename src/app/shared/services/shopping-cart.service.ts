@@ -36,7 +36,7 @@ export class ShoppingCartService {
     });
   }
 
-  private getItem(cartId: string, productId: string) {
+  public getItem(cartId: string, productId: string) {
     return this.db.object('/shopping-carts/' + cartId + '/items/' + productId);
   }
 

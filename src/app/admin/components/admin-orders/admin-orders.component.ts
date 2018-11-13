@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from 'shared/services/order.service';
 
 @Component({
@@ -6,10 +7,21 @@ import { OrderService } from 'shared/services/order.service';
   templateUrl: './admin-orders.component.html',
   styleUrls: ['./admin-orders.component.css']
 })
-export class AdminOrdersComponent  {
-  orders$;
-  constructor(private orderService: OrderService) {
-    this.orders$ = orderService.getOrders();
-  }
+export class AdminOrdersComponent implements OnInit {
+  userId: any;
+  orders: any[];
+  constructor(
+    private orderService: OrderService,
+    private router: Router,
+    private route: ActivatedRoute) {
+   }
 
+
+   ngOnInit() {
+     this.orderService.getOrders().subscribe(
+       orders => {
+         this.orders = orders;
+       }
+     );
+   }
 }

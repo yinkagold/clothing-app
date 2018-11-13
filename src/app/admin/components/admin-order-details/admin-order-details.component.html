@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink = '/admin/orders' class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back to Dashboard</a>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="btn-group pull-right">
+      <!-- <a [routerLink]="['/edit-order/'+ id]" class="btn btn-secondary">Edit</a> -->
+      <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
+    </div>
+      
+  </div>
+</div>
+<hr>
+<!-- Display all the Order with information -->
+
+  <div *ngIf="order" class="card">
+      <h3 class="card-header">{{ order.shipping.name }}</h3>
+      <div class="card-block">
+        <div class="row">
+          <div class="col-md-8">
+            <h4>Order ID: {{id}}</h4>
+          </div>
+        </div>
+        <hr>
+        <ul class="list-group">
+          <li class="list-group-item">Customer Name: {{ order.shipping.name }}</li>
+          <li class="list-group-item">Customer Address: {{ order.shipping.addressLine1 }}</li>
+          <li class="list-group-item">Customer Phone: {{ order.shipping.phone }}</li>
+        </ul>
+        <table class="table">
+        <tbody>
+          <tr *ngFor="let item of order.items">
+            <th>Product</th>
+            <td>
+              <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail">
+              </div>
+            </td>
+            <th class="text-center" >Title</th>
+            <td>
+                {{ item.title }}
+            </td>
+            <th class="text-right" >Price</th>
+            <td class="text-right">
+                {{ item.price | currency:'NGN':true }}
+            </td>
+            <th class="text-right" >Quantity</th>
+            <td>
+                {{ item.quantity }}
+              </td>
+            <th class="text-right" >Total Price</th>
+            <td class="text-right">
+              {{ item.totalPrice | currency:'NGN':true }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>

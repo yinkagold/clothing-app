@@ -1,11 +1,19 @@
 
-
 .sticky-top {
     top: 80px;
 }
 
 .list-group {
    padding: left;
-   left: 200px;
+   left: 100px;
    
+}
+
+.list-group-item {
+   width: auto;
+
+    height: auto;
+    
+   
+    padding-inline-start: 0%
 }

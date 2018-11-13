@@ -1,14 +1,16 @@
 import { OrderService } from 'shared/services/order.service';
 import { AuthService } from 'shared/services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-my-orders',
   templateUrl: './my-orders.component.html',
   styleUrls: ['./my-orders.component.css']
 })
-export class MyOrdersComponent  {
+export class MyOrdersComponent {
   orders$;
+  userId: any;
+  orders: any[];
   constructor(
     private authService: AuthService,
     private orderService: OrderService) {

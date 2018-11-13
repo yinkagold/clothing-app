@@ -1,11 +1,9 @@
-import { ProductService } from 'shared/services/product.service';
-
-import { Observable } from 'rxjs/Rx';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { DataTableResource } from 'angular-4-data-table';
 import { Subscription } from 'rxjs/Subscription';
 import { Product } from 'shared/models/product';
-import { DataTableResource } from 'angular-4-data-table';
+import { ProductService } from 'shared/services/product.service';
 
 
 @Component({

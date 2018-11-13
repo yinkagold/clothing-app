@@ -14,10 +14,10 @@
     </div>
   </div>
   <div class="form-group">
-    <label for=""></label>
-    <input #addressLine2="ngModel" name="addressLine2" [(ngModel)]="shipping.addressLine2" type="text" class="form-control" placeholder="Line 2" required>
-    <div class="alert alert-danger" *ngIf="addressLine2.touched && addressLine2.invalid">
-      <div *ngIf="addressLine2.errors.required">Address Line 2 is required.</div>
+    <label for="">Phone</label>
+    <input #phone="ngModel" name="phone" [(ngModel)]="shipping.phone" type="text" class="form-control" placeholder="Phone no" required>
+    <div class="alert alert-danger" *ngIf="phone.touched && phone.invalid">
+      <div *ngIf="phone.errors.required">Phone Number is required.</div>
     </div>
   </div>
   <div class="form-group">
