@@ -5,6 +5,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Order } from './../../../shared/models/order';
 import { OrderService } from './../../../shared/services/order.service';
 
+
 @Component({
   selector: 'app-admin-order-details',
   templateUrl: './admin-order-details.component.html',

@@ -17,7 +17,7 @@ export class Order {
             //     totalPrice: i.totalPrice
             // };
             return {
-                 title: i.title,
+                title: i.title,
                 imageUrl: i.imageUrl,
                 price: i.price,
                 quantity: i.quantity,

@@ -1,7 +1,9 @@
-
+import { OrderService } from './../shared/services/order.service';
+import { AuthGuard } from './../shared/services/auth-guard.service';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthGuard } from 'shared/services/auth-guard.service';
+import { FormsModule } from '@angular/forms';
+
 
 import { SharedModule } from './../shared/shared.module';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
@@ -9,7 +11,6 @@ import { AdminProductsComponent } from './components/admin-products/admin-produc
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AdminOrderDetailsComponent } from './components/admin-order-details/admin-order-details.component';
-import { EditOrderComponent } from './components/edit-order/edit-order.component';
 
 
 
@@ -17,6 +18,7 @@ import { EditOrderComponent } from './components/edit-order/edit-order.component
 @NgModule({
   imports: [
     SharedModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: 'admin/products/new',
@@ -42,20 +44,15 @@ import { EditOrderComponent } from './components/edit-order/edit-order.component
         path: 'admin/orders/:id',
         component: AdminOrderDetailsComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
-      },
-      {
-        path: 'edit-order/:id',
-        component: EditOrderComponent,
-        canActivate: [AuthGuard, AdminAuthGuard]
-      },
+      }
     ])
   ],
   declarations: [
     AdminProductsComponent,
     AdminOrdersComponent,
     ProductFormComponent,
-    AdminOrderDetailsComponent,
-    EditOrderComponent,
-  ]
+    AdminOrderDetailsComponent
+  ],
+  providers: [ OrderService ]
 })
 export class AdminModule { }

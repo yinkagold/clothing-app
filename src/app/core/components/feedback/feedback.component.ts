@@ -34,7 +34,6 @@ export class FeedbackComponent {
       let formRequest = { name, phone, email, message, date };
       this.db.list('/contact').push(formRequest);
       alert('Feedback Sumbitted');
-      // this.toastr.Success('Feedback Submitted Successfully');
       this.form.reset();
     }
 

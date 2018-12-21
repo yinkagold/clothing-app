@@ -3,17 +3,6 @@
     top: 80px;
 }
 
-.list-group {
-   padding: left;
-   left: 100px;
-   
-}
-
 .list-group-item {
-   width: auto;
-
-    height: auto;
-    
-   
-    padding-inline-start: 0%
+   padding-inline-start: 0%
 }

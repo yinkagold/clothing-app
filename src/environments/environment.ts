@@ -12,5 +12,6 @@ export const environment = {
     projectId: "clothing-app-ec060",
     storageBucket: "",
     messagingSenderId: "405290178362"
-  }
+  },
+  stripeKey: "pk_test_GJazAeWPcjWaL4f2zGCbNvFk"
 };

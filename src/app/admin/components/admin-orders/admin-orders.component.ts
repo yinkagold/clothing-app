@@ -1,6 +1,7 @@
+import { OrderService } from './../../../shared/services/order.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OrderService } from 'shared/services/order.service';
+
 
 @Component({
   selector: 'app-admin-orders',
@@ -15,7 +16,6 @@ export class AdminOrdersComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) {
    }
-
 
    ngOnInit() {
      this.orderService.getOrders().subscribe(

@@ -1,0 +1,23 @@
+<rave-pay-button
+  angular-rave
+  text="'Pay me,my money'"
+  className="'paymentbtn'"
+  callback="confirmPayment($event)"
+  close="cancelledPayment()"
+  [key]="'FLWPUBK-e8518bcee34809fcc36807d89ca8e75f-X'"
+  reference="generateReference()"
+  amount=""
+>
+</rave-pay-button>
+
+<!-- <button
+  angular-rave
+  [PBFPubKey]="'FLWPUBK-e8518bcee34809fcc36807d89ca8e75f-X'"
+  [customer_email]="'user@example.com'"
+  amount="cart.totalPrice"
+  (callback)="paymentSuccess($event)"
+  (close)="paymentFailure()"
+  class="btn btn-primary"
+>
+  Buy for &#x20a6;{{ cart.totalPrice }}
+</button> -->

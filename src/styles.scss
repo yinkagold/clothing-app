@@ -6,13 +6,12 @@
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 @import "~prismjs/themes/prism-okaidia";
 
-@import '~ngx-toastr/toastr.css';
-
-$primary-color: #130c0c;
+$primary-color:black;
 $primary-color-hover: #130c0c;
 
 body { 
   padding-top: 0px; 
+  //background-color: teal;
 }
 
 h1, h2, h3 { 
@@ -23,8 +22,6 @@ h1, h2, h3 {
   border-bottom: 3px solid #e7e7e7;
   padding: 0px;
   width: auto;
-
- 
 }
 
 .navbar-light .navbar-brand {
